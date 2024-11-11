@@ -1,4 +1,4 @@
-﻿using OpenAI.Managers;
+﻿using Betalgo.Ranul.OpenAI.Managers;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;

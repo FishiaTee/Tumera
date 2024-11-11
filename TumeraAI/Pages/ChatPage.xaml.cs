@@ -1,10 +1,10 @@
+using Betalgo.Ranul.OpenAI;
+using Betalgo.Ranul.OpenAI.Managers;
+using Betalgo.Ranul.OpenAI.ObjectModels.RequestModels;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
-using OpenAI;
-using OpenAI.Managers;
-using OpenAI.ObjectModels.RequestModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -380,7 +380,7 @@ namespace TumeraAI.Pages
                 //{
                 //    Endpoint = new Uri(RuntimeConfig.EndpointURL)
                 //});
-                RuntimeConfig.OAIClient = new OpenAIService(new OpenAiOptions()
+                RuntimeConfig.OAIClient = new OpenAIService(new OpenAIOptions()
                 {
                     ApiKey = apiKey,
                     BaseDomain = RuntimeConfig.EndpointURL,
