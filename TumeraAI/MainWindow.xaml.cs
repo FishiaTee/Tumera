@@ -12,6 +12,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
+using TumeraAI.Main;
 using TumeraAI.Pages;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -34,6 +35,7 @@ namespace TumeraAI
             ExtendsContentIntoTitleBar = true;
             rootGrid = RootGrid;
             thisWindow = this;
+            Init.SetupChatTemplates();
         }
 
         private void RootNavigation_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)

@@ -13,7 +13,10 @@ namespace TumeraAI.Main.Types
     public class ChatSession
     {
         public string Name { get; set; }
-        public DateTime Time { get; set; }
+        public DateTime Time => DateTime.Now;
+        public int Tokens { get; set; }
+        public SessionType Type { get; set; }
         public ObservableCollection<Message> Messages;
+        public string SummarizedContext { get; set; }
     }
 }

@@ -4,16 +4,47 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:TumeraAI.Pages"
+    xmlns:types="using:TumeraAI.Main.Types"
+    xmlns:utils="using:TumeraAI.Main.Utils"
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:controls2="using:CommunityToolkit.WinUI.Controls"
+    xmlns:ic="using:FluentIcons.WinUI"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Grid Padding="20,15,0,0">
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <Grid>
-                <StackPanel>
-                    <TextBlock FontSize="30"
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock FontSize="30"
                            FontWeight="Medium"
                            Text="Settings"/>
+                <StackPanel Grid.Row="1"
+                      Margin="0,8,0,0">
+                    <controls2:SettingsCard x:Name="InferenceAPISettingsCard"
+                                                Header="Inference API"
+                                                HeaderIcon="{ic:SymbolIcon Symbol=Code}"
+                                                Description="Changes the way prompts are constructed">
+                        <ComboBox SelectedIndex="{x:Bind utils:RuntimeConfig.InferenceAPI, Mode=TwoWay}">
+                            <ComboBoxItem>Chat Completion</ComboBoxItem>
+                            <ComboBoxItem>Text Completion</ComboBoxItem>
+                        </ComboBox>
+                    </controls2:SettingsCard>
+                    <controls2:SettingsCard x:Name="AutoTitleGenerationSettingsCard"
+                                            Header="Generate session titles"
+                                            HeaderIcon="{ic:SymbolIcon Symbol=ChatSparkle}"
+                                            Description="Automatically generates titles for chat sessions based on the first responses">
+                        <ToggleSwitch IsOn="{x:Bind utils:RuntimeConfig.AutoGenerateTitles, Mode=TwoWay}"/>
+                    </controls2:SettingsCard>
+                    <controls2:SettingsCard x:Name="StreamResponsesSettingsCard"
+                                            Header="Stream Responses"
+                                            HeaderIcon="{ic:SymbolIcon Symbol=Stream}"
+                                            Description="Display generated response in real-time instead of waiting for the full message">
+                        <ToggleSwitch IsOn="{x:Bind utils:RuntimeConfig.StreamResponses, Mode=TwoWay}"/>
+                    </controls2:SettingsCard>
                 </StackPanel>
             </Grid>
         </ScrollViewer>

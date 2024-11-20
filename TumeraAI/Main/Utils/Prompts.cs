@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TumeraAI.Main.Types
+namespace TumeraAI.Main.Utils
 {
-    public enum Roles
+    class Prompts
     {
-        USER,
-        ASSISTANT
+        public static string JailbreakPrompt = """
+
+        """;
     }
 }

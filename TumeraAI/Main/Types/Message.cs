@@ -11,23 +11,8 @@ namespace TumeraAI.Main.Types
     public class Message: INotifyPropertyChanged
     {
         public Roles Role { get; set; }
-        public string RoleName => Role.ToString();
         public DateTime Time => DateTime.Now;
         public string FormattedTime => Time.ToString("MMM dd yyyy, hh:mm tt");
-        public List<string> Contents { get; set; }
-        public List<FileAttachment> Attachments = new List<FileAttachment>();
-        public bool AttachmentsVisible
-        {
-            get
-            {
-                if (Attachments?.Count > 0 && !IsAIResponse)
-                {
-                    return true;
-                }
-                return false;
-            }
-        }
-        public int ContentIndex = 0;
         private string _content = "";
         public string Content
         {
@@ -39,27 +24,6 @@ namespace TumeraAI.Main.Types
                     _content = value;
                     OnPropertyChanged();
                 }
-            }
-        }
-        public int VisibleContentIndex => ContentIndex + 1;
-        public int RealContentCount
-        {
-            get
-            {
-                if (Contents != null) return Contents.Count - 1;
-                return 0;
-            }
-        } 
-
-        public bool MultipleResponsesPanelVisible
-        {
-            get
-            {
-                if (RealContentCount > 0)
-                {
-                    return true;
-                }
-                return false;
             }
         }
 

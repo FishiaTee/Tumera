@@ -10,5 +10,7 @@ namespace TumeraAI.Main.Types
     {
         public string Name { get; set; }
         public string Identifier { get; set; }
+        public bool SupportVision { get; set; }
+        public bool SupportFunctionCalling { get; set; }
     }
 }

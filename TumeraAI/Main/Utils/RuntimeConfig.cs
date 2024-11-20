@@ -1,7 +1,4 @@
-﻿using Betalgo.Ranul.OpenAI.Managers;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using System.Collections.Generic;
 using TumeraAI.Main.Types;
 
 namespace TumeraAI.Main.Utils
@@ -10,18 +7,13 @@ namespace TumeraAI.Main.Utils
     {
         public static string EndpointURL = "";
         public static string EndpointAPIKey = "";
-        public static bool IsConnected = false;
-        public static OpenAIService OAIClient;
-        public static Roles CurrentRole = Roles.USER;
+        public static bool IsConnected = true;
         public static bool IsInferencing = false;
-        public static string SystemPrompt = "";
-        public static bool StreamResponse = true;
-        public static bool EnableAttachments = false;
-        public static List<string> SupportedAttachments = new List<string>() { ".png", ".jpg" };
-        public static int Seed = -1;
-        public static float Temperature = 1;
-        public static float FrequencyPenalty = 0;
-        public static float PresencePenalty = 0;
-        public static int MaxTokens = -1;
+        public static Dictionary<string, ChatTemplate> ChatTemplates = new Dictionary<string, ChatTemplate>();
+        public static List<string> ChatTemplatesList = new List<string>();
+        public static int SelectedChatTemplate = 0;
+        public static int InferenceAPI = 0;
+        public static bool AutoGenerateTitles = true;
+        public static bool StreamResponses = true;
     }
 }

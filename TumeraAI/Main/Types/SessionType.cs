@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace TumeraAI.Main.Types
 {
-    public class FileAttachment
+    public enum SessionType
     {
-        public string Name { get; set; }
-        public string Path { get; set; }
-        public string Extension { get; set; }
+        INSTRUCT,
+        TEXT_GENERATION,
+        ROLEPLAY
     }
 }
