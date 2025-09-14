@@ -1,3 +1,9 @@
+## Archival Notice
+
+This repository is no longer maintained. Please refer to the official [llama.cpp](https://github.com/ggml-org/llama.cpp) repository for other (actived maintained) front-ends that are made by people who are more experienced than I am, or ever will.
+
+The original contents of this README file are below, for preservation purposes.
+
 # Tumera
  Yet another frontend for LLM, written using .NET and WinUI 3
 
